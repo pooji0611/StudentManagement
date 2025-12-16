@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Management System</title>
+    <title>Student Management</title>
 </head>
 <body>
 {% extends 'base.html' %}
@@ -27,8 +27,10 @@
         <td>{{ s.course }}</td>
         <td>{{ s.age }}</td>
         <td>
+            <a class="edit-btn" href="{% url 'update_student' s.id %}">Edit</a> |
             <a class="delete-btn" href="{% url 'delete_student' s.id %}">Delete</a>
         </td>
+
     </tr>
     {% endfor %}
 </table>

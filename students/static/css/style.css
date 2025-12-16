@@ -77,6 +77,12 @@ tr:nth-child(even) {
     text-decoration: none;
 }
 
+.edit-btn{
+    color : #2980b9;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 8px;
+}
 .delete-btn {
     color: red;
     text-decoration: none;
