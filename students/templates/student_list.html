@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+{% extends 'base.html' %}
+{% block content %}
+
+<a class="add-btn" href="{% url 'add_student' %}">➕ Add Student</a>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Course</th>
+        <th>Age</th>
+        <th>Action</th>
+    </tr>
+
+    {% for s in students %}
+    <tr>
+        <td>{{ s.name }}</td>
+        <td>{{ s.email }}</td>
+        <td>{{ s.course }}</td>
+        <td>{{ s.age }}</td>
+        <td>
+            <a class="delete-btn" href="{% url 'delete_student' s.id %}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
+
+</body>
+</html>
